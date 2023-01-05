@@ -12,13 +12,16 @@ export default function StickyNavbar() {
         your content from being obscured when the user scrolls to the bottom of the page.
       */}
       <div className="fixed inset-x-0 bottom-0 ">
-        <div className="bg-sky-500 border-t-2 border-sky-600">
+      <div className="overflow-hidden bg-gray-200">
+          <div className="h-2 bg-indigo-600" style={{ width: '37.5%' }} />
+        </div>
+        <div className="bg-zinc-900 border-t-2 border-zinc-600">
           <div className="mx-auto max-w-full py-3 px-3 sm:px-6 lg:px-8">
             <div className="flex flex-wrap items-center justify-between">
               <div className="flex w-0 flex-1 items-center">
               <a
                   href="#"
-                  className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium text-sky-600 shadow-sm hover:bg-sky-50"
+                  className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium text-zinc-600 shadow-sm hover:bg-zinc-50"
                 >
                   <ArrowLeftIcon className='h-4 mr-2'/> Back
                 </a>
@@ -26,7 +29,7 @@ export default function StickyNavbar() {
               <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
                 <button
                   onClick={() => setNextLabel('Next')}
-                  className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium text-sky-600 shadow-sm hover:bg-sky-50"
+                  className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium text-zinc-600 shadow-sm hover:bg-zinc-50"
                 >
                   {nextLabel}
                 </button>
