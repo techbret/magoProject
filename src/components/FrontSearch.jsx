@@ -286,7 +286,7 @@ export default function FrontSearch() {
                               htmlFor="comments"
                               className="font-medium text-gray-700"
                             >
-                              I need multiple time slots
+                              I need/have multiple time slots
                             </label>
                             <p
                               id="comments-description"
