@@ -37,7 +37,7 @@ export default function ProviderSignUp() {
                                 to="/sign-up"
                                 className="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold bg-sky-500 leading-6 text-white shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                             >
-                                <span><PlusCircleIcon className='h-8 inline-block' /></span>  SpaceTogether Setup
+                                <span><PlusCircleIcon className='h-6 inline-block' /></span>  Space Together Setup
                             </Link>
                         </div>
                     </nav>
@@ -73,7 +73,7 @@ export default function ProviderSignUp() {
                                             to="/sign-up"
                                             className="inline-block rounded-lg px-3 py-2 text-sm font-semibold bg-sky-500 leading-6 text-white shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                                         >
-                                            <span><PlusCircleIcon className='h-8 inline-block' /></span>  SpaceTogether Setup
+                                            <span><PlusCircleIcon className='h-6 inline-block' /></span>  Space Together Setup
                                         </Link>
                                     </div>
                                 </div>
