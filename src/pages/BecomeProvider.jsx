@@ -1,6 +1,4 @@
 import React from "react";
-import StickyNavbar from "../components/StickyNavBar";
-import { UserAuth } from "../context/AuthContext";
 import icon from "../assets/icon.svg";
 import { RadioGroup } from "@headlessui/react";
 import { useState } from "react";
@@ -12,6 +10,7 @@ const officeTypes = [
   { name: "Kitchen", inStock: true },
   { name: "Office", inStock: true },
   { name: "Studio", inStock: true },
+  { name: "Dance Studio", inStock: true },
   { name: "Other", inStock: true },
 ];
 
@@ -21,8 +20,9 @@ function classNames(...classes) {
   
 
 export default function BecomeProvider() {
-  const { user } = UserAuth();
   const [space, setSpace] = useState(null);
+
+  console.log(space)
 
   return (
     <div>
@@ -51,9 +51,9 @@ export default function BecomeProvider() {
                         option.inStock
                           ? "cursor-pointer focus:outline-none"
                           : "opacity-25 cursor-not-allowed",
-                        active ? "ring-2 ring-offset-2 ring-indigo-500" : "",
+                        active ? "ring-2 ring-offset-2 ring-sky-500" : "",
                         checked
-                          ? "bg-indigo-600 border-transparent text-white hover:bg-indigo-700"
+                          ? "bg-sky-600 border-transparent text-white hover:bg-sky-500"
                           : "bg-white border-gray-200 text-gray-900 hover:bg-gray-50",
                         "border rounded-md p-24 flex items-center justify-center text-sm font-medium uppercase sm:flex-1"
                       )
@@ -68,7 +68,6 @@ export default function BecomeProvider() {
           </div>
         </div>
       </div>
-      <StickyNavbar />
     </div>
   );
 }

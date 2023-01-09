@@ -1,16 +1,21 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { RadioGroup } from "@headlessui/react";
+import churchIcon from '../assets/church.svg';
+import weightIcon from '../assets/weight.svg';
+import buildingIcon from '../assets/building.svg';
+import kitchenIcon from '../assets/kitchen.svg';
+import officeIcon from '../assets/office.svg';
+import studioIcon from '../assets/studio-light.svg';
 import {
-  Bars3Icon,
-  BuildingLibraryIcon,
+  HomeModernIcon,
+  BuildingOffice2Icon,
   ChatBubbleBottomCenterTextIcon,
   ChatBubbleLeftRightIcon,
   InboxIcon,
   QuestionMarkCircleIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { useState } from "react";
 
 const memoryOptions = [
@@ -24,12 +29,12 @@ const memoryOptions = [
 ];
 
 const officeTypes = [
-  { name: "Church", inStock: true },
-  { name: "Co-Working", inStock: true },
-  { name: "Gym", inStock: true },
-  { name: "Kitchen", inStock: true },
-  { name: "Office", inStock: true },
-  { name: "Studio", inStock: true },
+  { name: "Church", inStock: true, icon: churchIcon },
+  { name: "Co-Working", inStock: true, icon: buildingIcon },
+  { name: "Gym", inStock: true, icon: weightIcon },
+  { name: "Kitchen", inStock: true, icon: kitchenIcon },
+  { name: "Office", inStock: true, icon: officeIcon  },
+  { name: "Studio", inStock: true, icon: studioIcon  },
   { name: "Other", inStock: true },
 ];
 
@@ -49,7 +54,7 @@ export default function FrontSearch() {
   return (
     <div className="bg-gradient-to-r from-cyan-500 to-blue-500">
       <div className="relative py-12 px-8 ">
-        <h1 className="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl sm:mt-20">
+        <h1 className="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl sm:mt-12">
           <span className="block text-white">Find your Space</span>
         </h1>
         <p className="mx-auto mt-4 max-w-lg text-center text-2xl text-zinc-800 font-bold tracking-tight sm:text-3xl lg:text-4xl sm:max-w-3xl">
@@ -113,6 +118,7 @@ export default function FrontSearch() {
                         </RadioGroup.Label>
                         <div className="grid grid-cols-3 gap-3 sm:grid-cols-7">
                           {officeTypes.map((option) => (
+                            
                             <RadioGroup.Option
                               key={option.name}
                               value={option}
@@ -126,13 +132,14 @@ export default function FrontSearch() {
                                     : "",
                                   checked
                                     ? "bg-indigo-600 border-transparent text-white hover:bg-indigo-700"
-                                    : "bg-white border-gray-200 text-gray-900 hover:bg-gray-50",
+                                    : "bg-white border-gray-300 border-2 text-gray-900 hover:bg-gray-50",
                                   "border rounded-md py-8 px-3 flex items-center justify-center text-sm font-medium uppercase sm:flex-1"
                                 )
                               }
                               disabled={!option.inStock}
                             >
                               <RadioGroup.Label as="span">
+                                <img src={option.icon} alt="" className="h-6 mx-auto"/>                                 
                                 {option.name}
                               </RadioGroup.Label>
                             </RadioGroup.Option>

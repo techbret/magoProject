@@ -52,6 +52,7 @@ export const AuthContextProvider = ({ children }) => {
       navigate('/become-a-provider/' + userCredential.user.uid)
     })
   };
+  
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
